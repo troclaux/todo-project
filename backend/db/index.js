@@ -1,10 +1,10 @@
 const { Pool } = require('pg')
  
 const pool = new Pool({
-    host: '/cloudsql/myproject:zone:mydb',
+    host: 'localhost',
     user: 'username',
     password: 'password',
-    database: 'database_name',
+    database: 'db',
 })
 
 module.exports = {
