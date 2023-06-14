@@ -6,7 +6,9 @@ Project that implements a simple web application that is a todo list.
 ## Objective
 Learn many DevOps concepts that are difficult to grasp just by watching tutorials and reading guides.
 
-### To do
+## Kanban Board
+
+### To Do
 - Discover order to setup server and DB
 - Connect RDS instance with node server
 - Add authentication for users
@@ -22,7 +24,7 @@ Learn many DevOps concepts that are difficult to grasp just by watching tutorial
         - Include Terraform in Jenkins Pipeline
 - Integrate frontend with backend
 
-### In progress
+### In Progress
 - Create instance of a List
 
 ### Done
