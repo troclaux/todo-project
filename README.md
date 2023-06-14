@@ -1,6 +1,12 @@
-# DevOps Project
+# Todo Project
 
-## To do
+## Description
+Project that implements a simple web application that is a todo list. 
+
+## Objective
+Learn many DevOps concepts that are difficult to grasp just by watching tutorials and reading guides.
+
+### To do
 - Discover order to setup server and DB
 - Connect RDS instance with node server
 - Add authentication for users
@@ -16,10 +22,10 @@
         - Include Terraform in Jenkins Pipeline
 - Integrate frontend with backend
 
-## In progress
+### In progress
 - Create instance of a List
 
-## Done
+### Done
 - Define DB model
 - Create RDS instance
 - Create tables
