@@ -1,10 +1,12 @@
 # Todo Project
 
 ## Description
-Project that implements a simple web application that is a todo list. 
+A simple web application that functions as a todo list. This project aims to implement DevOps principles such as:
 
-## Objective
-Learn many DevOps concepts that are difficult to grasp just by watching tutorials and reading guides.
+1. Continuous Integration
+2. Continuous Delivery
+3. Infrastructure as Code
+4. Automation
 
 ## Kanban Board
 
