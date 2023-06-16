@@ -1,11 +1,11 @@
-CREATE TABLE users (
+CREATE TABLE public.users (
     id SERIAL PRIMARY KEY,
     username VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL,
     password VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE tasks (
+CREATE TABLE public.tasks (
     id SERIAL PRIMARY KEY,
     user_id INT NOT NULL,
     description TEXT,
