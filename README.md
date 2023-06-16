@@ -5,6 +5,7 @@ A simple web application that functions as a todo list. This project aims to imp
 
 1. Continuous Integration
 2. Continuous Delivery
+2. Continuous Deployment
 3. Infrastructure as Code
 4. Automation
 
@@ -13,7 +14,6 @@ A simple web application that functions as a todo list. This project aims to imp
 ### To Do
 - Discover order to setup server and DB
 - Connect RDS instance with node server
-- Add authentication for users
 - Learn how to test PERN stack
 - Write tests for PERN stack
     - React
@@ -27,7 +27,7 @@ A simple web application that functions as a todo list. This project aims to imp
 - Integrate frontend with backend
 
 ### In Progress
-- Create instance of a List
+- Implement POST request for tasks
 
 ### Done
 - Define DB model
