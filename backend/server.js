@@ -7,14 +7,19 @@ app.use(express.json());
 
 // Get all tasks
 app.get('/api/v1/tasks', async (req, res) => {
-    const results = await db.query("SELECT * FROM tasks");
-    console.log(results);
-    res.status(200).json({
-        status: "success",
-        data: {
-            task: ["task1", "task2", "task3"],
-        },
-    });
+    try {
+        const results = await db.query("SELECT * FROM tasks");
+        console.log(results);
+        res.status(200).json({
+            status: "success",
+            results: results.rows.length,
+            data: {
+                task: results.rows,
+            },
+        });
+    } catch (err) {
+        console.log(err);
+    }
 });
 
 // Get a single task
