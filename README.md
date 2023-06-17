@@ -12,8 +12,6 @@ A simple web application that functions as a todo list. This project aims to imp
 ## Kanban Board
 
 ### To Do
-- Discover order to setup server and DB
-- Connect RDS instance with node server
 - Learn how to test PERN stack
 - Write tests for PERN stack
     - React
@@ -30,6 +28,8 @@ A simple web application that functions as a todo list. This project aims to imp
 - Implement POST request for tasks
 
 ### Done
+- Learn steps to setup server and DB
+- Connect RDS instance with node server
 - Define DB model
 - Create RDS instance
 - Create tables
