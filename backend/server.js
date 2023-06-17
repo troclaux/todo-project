@@ -1,51 +1,52 @@
 const dotenv = require('dotenv').config();
 const express = require('express');
-const morgan = require('morgan');
 const app = express();
+const db = require('./db');
 
-// app.use(morgan('dev';));
 app.use(express.json());
 
-// Get all lists
-app.get('/api/v1/lists', (req, res) => {
+// Get all tasks
+app.get('/api/v1/tasks', async (req, res) => {
+    const results = await db.query("SELECT * FROM tasks");
+    console.log(results);
     res.status(200).json({
         status: 'success',
         data: {
-            lists: ["list1", "list2", "list3"],
+            tasks: ["task1", "task2", "task3"],
         },
     });
 });
 
-// Get a single list
-app.get('/api/v1/lists/:id', (req, res) => {
+// Get a single task
+app.get('/api/v1/tasks/:id', (req, res) => {
     console.log(req.params);
     res.status(200).json({
         status: 'success',
         data: {
-            list: 'shopping',
+            task: 'shopping',
         },
     });
 });
 
-// Create a list
-app.post('/api/v1/lists', (req, res) => {
+// Create a task
+app.post('/api/v1/tasks', (req, res) => {
     console.log(req.body);
 });
 
-// Update a list
-app.put('/api/v1/lists/:id', (req, res) => {
+// Update a task
+app.put('/api/v1/tasks/:id', (req, res) => {
     console.log(req.params.id);
     console.log(req.body);
     res.status(200).json({
         status: 'success',
         data: {
-            list: 'shopping',
+            task: 'shopping',
         },
     });
 });
 
-// Delete a list
-app.delete('/api/v1/lists/:id', (req, res) => {
+// Delete a task
+app.delete('/api/v1/tasks/:id', (req, res) => {
     res.status(204).json({
         status: 'success'
     });
@@ -54,5 +55,5 @@ app.delete('/api/v1/lists/:id', (req, res) => {
 const port = process.env.PORT || 3001;
 
 app.listen(port, () => {
-    console.log(`Listening on port ${port}`);
+    console.log(`listening on port ${port}`);
 });
