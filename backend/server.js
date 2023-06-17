@@ -10,9 +10,9 @@ app.get('/api/v1/tasks', async (req, res) => {
     const results = await db.query("SELECT * FROM tasks");
     console.log(results);
     res.status(200).json({
-        status: 'success',
+        status: "success",
         data: {
-            tasks: ["task1", "task2", "task3"],
+            task: ["task1", "task2", "task3"],
         },
     });
 });
