@@ -23,14 +23,20 @@ app.get('/api/v1/tasks', async (req, res) => {
 });
 
 // Get a single task
-app.get('/api/v1/tasks/:id', (req, res) => {
-    console.log(req.params);
-    res.status(200).json({
-        status: 'success',
-        data: {
-            task: 'shopping',
-        },
-    });
+app.get('/api/v1/tasks/:id', async (req, res) => {
+    console.log(req.params.id);
+    try {
+        const results = await db.query("SELECT * FROM tasks WHERE id = $1", [req.params.id]);
+        console.log(results.rows[0]);
+        res.status(200).json({
+            status: "success",
+            data: {
+                task: results.rows[0],
+            },
+        });
+    } catch (err) {
+        console.log(err);
+    }
 });
 
 // Create a task
@@ -57,7 +63,7 @@ app.delete('/api/v1/tasks/:id', (req, res) => {
     });
 });
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
     console.log(`listening on port ${port}`);
