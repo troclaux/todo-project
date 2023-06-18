@@ -50,7 +50,11 @@ app.post('/api/v1/tasks', async (req, res) => {
             data: {
                 task: results.rows[0],
             },
-        }); } catch (err) { console.log(err); } });
+        });
+    } catch (err) { 
+        console.log(err); 
+    } 
+});
 
 // Update a task
 app.put('/api/v1/tasks/:id', async (req, res) => {
