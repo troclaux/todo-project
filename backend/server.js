@@ -40,8 +40,20 @@ app.get('/api/v1/tasks/:id', async (req, res) => {
 });
 
 // Create a task
-app.post('/api/v1/tasks', (req, res) => {
+app.post('/api/v1/tasks', async (req, res) => {
     console.log(req.body);
+    try {
+        const results = await db.query("INSERT INTO tasks (user_id, description, completed) values ($1, $2, $3) RETURNING *", [req.body.user_id, req.body.description, req.body.completed]);
+        console.log(results);
+        res.status(201).json({
+            status: "success",
+            data: {
+                task: results.rows[0],
+            },
+        });
+    } catch (err) {
+        console.log(err);
+    }
 });
 
 // Update a task
