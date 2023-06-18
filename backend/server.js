@@ -50,22 +50,26 @@ app.post('/api/v1/tasks', async (req, res) => {
             data: {
                 task: results.rows[0],
             },
+        }); } catch (err) { console.log(err); } });
+
+// Update a task
+app.put('/api/v1/tasks/:id', async (req, res) => {
+    console.log(req.body);
+    try {
+        const results = await db.query("UPDATE tasks SET description = $1, completed = $2 WHERE id = $3", [req.body.description, req.body.completed, req.params.id])
+
+        console.log(results);
+
+        res.status(200).json({
+            status: 'success',
+            data: {
+                task: results.rows[0],
+            },
         });
+
     } catch (err) {
         console.log(err);
     }
-});
-
-// Update a task
-app.put('/api/v1/tasks/:id', (req, res) => {
-    console.log(req.params.id);
-    console.log(req.body);
-    res.status(200).json({
-        status: 'success',
-        data: {
-            task: 'shopping',
-        },
-    });
 });
 
 // Delete a task
