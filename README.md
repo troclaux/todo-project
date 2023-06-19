@@ -12,7 +12,18 @@ A simple web application that functions as a todo list. This project aims to imp
 ## Kanban Board
 
 ### To Do
+- Landing page
 - Learn how to test PERN stack
+- Write Pipeline that builds application
+    - Make Dockerfile for frontend
+    - Make Dockerfile for backend
+    - Build application with Kubernetes .yaml file
+    - Setup Kubernetes cluster over aws cloud with Terraform and Ansible
+    - Connect Kubernetes cluster with Jenkins that triggers on git push
+        - Jenkins should:
+            - Build docker image
+            - Push to docker repository
+            - Deploy to Kubernetes cluster
 - Write tests for PERN stack
     - React
     - Node.js
@@ -25,12 +36,14 @@ A simple web application that functions as a todo list. This project aims to imp
 - Integrate frontend with backend
 
 ### In Progress
-- Implement POST request for tasks
 
 ### Done
+- Learn basics of Tailwind
+- Learn basics of next.js
 - Learn steps to setup server and DB
 - Connect RDS instance with node server
 - Define DB model
 - Create RDS instance
 - Create tables
 - Connect RDS instance with DBeaver
+- Implement POST request for tasks
