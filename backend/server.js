@@ -77,10 +77,18 @@ app.put('/api/v1/tasks/:id', async (req, res) => {
 });
 
 // Delete a task
-app.delete('/api/v1/tasks/:id', (req, res) => {
-    res.status(204).json({
-        status: 'success'
-    });
+app.delete('/api/v1/tasks/:id', async (req, res) => {
+    console.log(req.body);
+    try {
+        const results = await db.query("DELETE FROM tasks WHERE id = $1", [req.params.id]);
+
+        res.status(204).json({
+            status: 'success',
+        });
+
+    } catch (err) {
+        console.log(err);
+    }
 });
 
 const port = process.env.PORT || 3000;
