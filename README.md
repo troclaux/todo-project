@@ -13,10 +13,9 @@ A simple web application that functions as a todo list. This project aims to imp
 
 ### To Do
 - Landing page
+- Integrate frontend with backend
 - Learn how to test PERN stack
 - Write Pipeline that builds application
-    - Make Dockerfile for frontend
-    - Make Dockerfile for backend
     - Build application with Kubernetes .yaml file
     - Setup Kubernetes cluster over aws cloud with Terraform and Ansible
     - Connect Kubernetes cluster with Jenkins that triggers on git push
@@ -33,11 +32,12 @@ A simple web application that functions as a todo list. This project aims to imp
     - Test
     - Deploy
         - Include Terraform in Jenkins Pipeline
-- Integrate frontend with backend
 
 ### In Progress
 
 ### Done
+- Make Dockerfile for frontend
+- Make Dockerfile for backend
 - Learn basics of Tailwind
 - Learn basics of next.js
 - Learn steps to setup server and DB
