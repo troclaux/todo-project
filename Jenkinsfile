@@ -15,6 +15,11 @@ pipeline {
                 }
             }
         }
+        stage('Docker push image') {
+            steps {
+                sh 'docker push $DOCKERHUB_USERNAME/$DOCKERHUB_REPO:$BUILD_NUMBER'
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building..'
