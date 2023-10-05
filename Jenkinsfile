@@ -3,9 +3,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Build Docker image') {
             steps {
-                echo 'Building...'
+                script {
+                    dockerapp = docker.build("troclaux/todo-backend")
+                }
             }
         }
         stage('Test') {
@@ -13,10 +15,20 @@ pipeline {
                 echo 'Testing...'
             }
         }
-        stage('Deploy') {
+        stage('Push to Dockerhub') {
             steps {
-                echo 'Deploying...'
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+                            dockerapp.push("latest")
+                        }
+                    }
+                }
             }
+        }
+    }
+    post {
+        always {
+            sh 'docker logout'
         }
     }
 }
