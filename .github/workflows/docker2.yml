@@ -1,0 +1,28 @@
+name: Push Docker Images
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set working directory
+        run: cd backend
+      - name: Build and push Docker image
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/my-app-backend:latest .
+        with:
+          push: true
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set working directory
+        run: cd frontend
+      - name: Build and push Docker image
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/my-app-frontend:latest .
+        with:
+          push: true
