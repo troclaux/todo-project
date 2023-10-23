@@ -2,17 +2,16 @@ name: Docker build and push
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "mern" ]
   pull_request:
-    branches: [ "main" ]
-
-defaults:
-  run:
-    working-directory: backend
+    branches: [ "main", "mern" ]
 
 jobs:
   docker:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./backend
     steps:
       -
         name: Set up QEMU
