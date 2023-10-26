@@ -1,17 +1,18 @@
 # Todo Project
 
 ## Description
-A simple web application that functions as a todo list. This project aims to implement DevOps principles such as:
-
-1. Continuous Integration
-2. Continuous Delivery
-2. Continuous Deployment
-3. Infrastructure as Code
-4. Automation
+Full-stack web app that leverages DevOps tools and practices.
 
 ## Objective
-Learn the basics of DevOps, by implementing IaC with Docker, Kubernetes, Terraform and Jenkins.
-Learn the basics of full-stack development with Node.js, Express.js, React.js and PostgreSQL.
+
+Learn the basics of full stack web development with Node.js, Express.js, React.js and MongoDB.
+
+Learn DevOps principles, such as:
+
+1. Continuous Deployment
+2. Continuous Integration
+3. Infrastructure as Code
+4. Automation
 
 ## Kanban Board
 
