@@ -10,5 +10,5 @@ CREATE TABLE public.tasks (
     user_id INT NOT NULL,
     description TEXT,
     completed BOOLEAN,
-    FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
 );
+    FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
