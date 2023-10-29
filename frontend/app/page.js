@@ -3,25 +3,23 @@
 import { useEffect, useState } from 'react';
 
 export default function Home() {
-  const [tasks, setTasks] = useState([]);
+  // useEffect(() => {
+  //   async function fetchTasks() {
+  //     try {
+  //       const response = await fetch('http://localhost:3000/api/v1/tasks');
+  //       const data = await response.json();
+  //       setTasks(data.tasks);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   }
 
-  useEffect(() => {
-    async function fetchTasks() {
-      try {
-        const response = await fetch('http://localhost:3000/api/v1/tasks');
-        const data = await response.json();
-        setTasks(data.tasks);
-      } catch (error) {
-        console.error(error);
-      }
-    }
+  //   fetchTasks();
+  // }, []);
 
-    fetchTasks();
-  }, []);
-
-  if (!tasks) {
-    return <div>Loading...</div>;
-  }
+  // if (!tasks) {
+  //   return <div>Loading...</div>;
+  // }
 
   return (
     <div>
