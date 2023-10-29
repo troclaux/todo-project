@@ -30,12 +30,21 @@ app.get('/api/v1/tasks/:id', async (req, res) => {
     try {
         const results = await db.query("SELECT * FROM tasks WHERE id = $1", [req.params.id]);
         console.log(results.rows[0]);
-        res.status(200).json({
-            status: "success",
-            data: {
-                task: results.rows[0],
-            },
-        });
+        if (results.rows.length === 0) {
+            res.status(404).json({
+                status: "fail",
+                data: {
+                    task: "Task Not Found",
+                },
+            });
+        } else {
+            res.status(200).json({
+                status: "success",
+                data: {
+                    task: results.rows[0],
+                },
+            });
+        }
     } catch (err) {
         console.log(err);
     }
