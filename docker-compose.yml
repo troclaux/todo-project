@@ -1,21 +1,21 @@
 version: "3"
 services:
-  backend:
+  server:
     build:
-      context: ./backend
+      context: ./server
       dockerfile: Dockerfile
     volumes:
-      - ./backend:/app
+      - ./server:/app
     env_file: ./.env
     command: npm run dev
     ports:
       - 3000:3000
-  frontend:
+  client:
     build:
-      context: ./frontend
+      context: ./client
       dockerfile: Dockerfile
     volumes:
-      - ./frontend:/app
+      - ./client:/app
     command: npm run dev
     ports:
       - 3001:3000
