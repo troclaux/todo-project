@@ -29,7 +29,7 @@ app.get('/api/v1/tasks/:id', async (req, res) => {
     console.log(req.params.id);
     try {
         const results = await db.query("SELECT * FROM tasks WHERE id = $1", [req.params.id]);
-        console.log(results.rows[0]);
+        console.log('here', results.rows[0]);
         if (results.rows.length === 0) {
             res.status(404).json({
                 status: "fail",
@@ -71,17 +71,25 @@ app.post('/api/v1/tasks', async (req, res) => {
 app.put('/api/v1/tasks/:id', async (req, res) => {
     console.log(req.body);
     try {
-        const results = await db.query("UPDATE tasks SET description = $1, completed = $2 WHERE id = $3", [req.body.description, req.body.completed, req.params.id])
+        const results = await db.query("UPDATE tasks SET description = $1, completed = $2 WHERE id = $3 RETURNING *", [req.body.description, req.body.completed, req.params.id])
 
-        console.log(results);
+        console.log({ results });
 
-        res.status(200).json({
-            status: 'success',
-            data: {
-                task: results.rows[0],
-            },
-        });
-
+        if (results.rows.length === 0) {
+            res.status(404).json({
+                status: "fail",
+                data: {
+                    task: "Task Not Found",
+                },
+            });
+        } else {
+            res.status(200).json({
+                status: "success",
+                data: {
+                    task: results.rows[0],
+                },
+            });
+        }
     } catch (err) {
         console.log(err);
     }
