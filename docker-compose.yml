@@ -16,6 +16,6 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./client:/app
-    command: npm run dev
+    command: npm start
     ports:
       - 3001:3000
