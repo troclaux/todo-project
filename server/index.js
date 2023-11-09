@@ -110,7 +110,7 @@ app.delete('/api/v1/tasks/:id', async (req, res) => {
     }
 });
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 5001;
 
 app.listen(port, () => {
     console.log(`listening on port ${port}`);
