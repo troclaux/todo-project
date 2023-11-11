@@ -9,7 +9,7 @@ services:
     env_file: ./.env
     command: npm run dev
     ports:
-      - 3000:3000
+      - 5000:5000
   client:
     build:
       context: ./client
@@ -18,4 +18,4 @@ services:
       - ./client:/app
     command: npm start
     ports:
-      - 3001:3000
+      - 3000:3000
