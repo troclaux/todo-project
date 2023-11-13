@@ -4,6 +4,8 @@ services:
     build:
       context: ./server
       dockerfile: Dockerfile
+    networks:
+      - pern_network
     volumes:
       - ./server:/app
     env_file: ./.env
@@ -14,8 +16,13 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
+    networks:
+      - pern_network
     volumes:
       - ./client:/app
     command: npm start
     ports:
       - 3000:3000
+
+networks:
+  pern_network:
