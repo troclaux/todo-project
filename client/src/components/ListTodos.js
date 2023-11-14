@@ -43,13 +43,7 @@ const ListTodos = () => {
           </tr>
         </thead>
         <tbody>
-          {/*
-            <tr>
-              <td>John</td>
-              <td>Doe</td>
-              <td>john@example.com</td>
-            </tr>
-          */}
+
           {todos.map(todo => (
 
             <tr key = { todo.id }>
@@ -67,6 +61,7 @@ const ListTodos = () => {
             </tr>
 
           ))}
+
         </tbody>
       </table>
     </Fragment>
