@@ -31,7 +31,6 @@ const ListTodos = () => {
     getTodos();
   }, []);
 
-  console.log(todos);
   return (
     <Fragment>
       <table className="table mt-5 text-center">
