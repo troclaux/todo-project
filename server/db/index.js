@@ -8,7 +8,7 @@ const pool = new Pool({
     // host: "189.6.59.232",
     host: "localhost",
     port: process.env.PGPORT,
-    database: process.env.PGDATABASE,
+    database: process.env.PGDATABASE
     // ssl: true,
     // dialect: "postgres",
     // dialectOptions: {
